@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB1UlEQVR4AcWWg3IcQRRFz7Nt27Zt27Zt27Zt27ZtG/F4Tnc6u5WtrVR2Krc+6r3u9+68N/0fS0QikVKRWGSLJCJNJBMpRCqRQqQWKUUykVgkEtEiRiQQcSJGxItoESXiRKyIE3EiQcSLeBEvEkSCSBSJIkkkiWSRIlJEqkgVaSJdZIhMkSWyRY7IFXkiXxSIQlEkikWJKBVlolxUiEpRJapFjagVdaJeNIhG0SSaRYtoFW2iXXSITtElukWP6BV9ol8MiEExJIbFiBgVY2JcTIhJMSWmxYyYFXNiXiyIRbEklsWKWBVrYl1siE2xJbbFjtgVe2Jf+OJAHIojcSxOxKk4E+fiQlyKK3EtbsStuBP34kE8iifxLF7Eq3gT7+JDfIov8S1+xK/4E/8SJEESLMESIiESKmESLhESKVESLTESK3ESLwmSKEmSLCmSKmmSLhmSKVmSLTmSK3mSLwVSKEVSLCVSKmVSLhVSKVVSLTVSK3VSLw3SKE3SLC3SKm3SLh3SKV3SLT3SK33SLwMyKEMyLCMyKmMyLhMyKVMyLTMyK3MyLwuyKEuyLCuyKmuyLhuyKVuyLTuyK3uyLwdyKEdyLCdyKmdyLhdyKVdyLTdyK3dyLw/yKE/yLC/yKm/yLh/yKV/yLb/yJ/8BFHVzYjHsbCEAAAAASUVORK5CYII=" />
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB1UlEQVR4AcWWg3IcQRRFz7Nt27Zt27Zt27Zt27ZtG/F4Tnc6u5WtrVR2Krc+6r3u9+68N/0fS0QikVKRWGSLJCJNJBMpRCqRQqQWKUUykVgkEtEiRiQQcSJGxItoESXiRKyIE3EiQcSLeBEvEkSCSBSJIkkkiWSRIlJEqkgVaSJdZIhMkSWyRY7IFXkiXxSIQlEkikWJKBVlolxUiEpRJapFjagVdaJeNIhG0SSaRYtoFW2iXXSITtElukWP6BV9ol8MiEExJIbFiBgVY2JcTIhJMSWmxYyYFXNiXiyIRbEklsWKWBVrYl1siE2xJbbFjtgVe2Jf+OJAHIojcSxOxKk4E+fiQlyKK3EtbsStuBP34kE8iifxLF7Eq3gT7+JDfIov8S1+xK/4E/8SJEESLMESIiESKmESLhESKVESLTESK3ESLwmSKEmSLCmSKmmSLhmSKVmSLTmSK3mSLwVSKEVSLCVSKmVSLhVSKVVSLTVSK3VSLw3SKE3SLC3SKm3SLh3SKV3SLT3SK33SLwMyKEMyLCMyKmMyLhMyKVMyLTMyK3MyLwuyKEuyLCuyKmuyLhuyKVuyLTuyK3uyLwdyKEdyLCdyKmdyLhdyKVdyLTdyK3dyLw/yKE/yLC/yKm/yLh/yKV/yLb/yJ/8BFHVzYjHsbCEAAAAASUVORK5CYII=" />
+    <meta name="msapplication-TileImage" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB1UlEQVR4AcWWg3IcQRRFz7Nt27Zt27Zt27Zt27ZtG/F4Tnc6u5WtrVR2Krc+6r3u9+68N/0fS0QikVKRWGSLJCJNJBMpRCqRQqQWKUUykVgkEtEiRiQQcSJGxItoESXiRKyIE3EiQcSLeBEvEkSCSBSJIkkkiWSRIlJEqkgVaSJdZIhMkSWyRY7IFXkiXxSIQlEkikWJKBVlolxUiEpRJapFjagVdaJeNIhG0SSaRYtoFW2iXXSITtElukWP6BV9ol8MiEExJIbFiBgVY2JcTIhJMSWmxYyYFXNiXiyIRbEklsWKWBVrYl1siE2xJbbFjtgVe2Jf+OJAHIojcSxOxKk4E+fiQlyKK3EtbsStuBP34kE8iifxLF7Eq3gT7+JDfIov8S1+xK/4E/8SJEESLMESIiESKmESLhESKVESLTESK3ESLwmSKEmSLCmSKmmSLhmSKVmSLTmSK3mSLwVSKEVSLCVSKmVSLhVSKVVSLTVSK3VSLw3SKE3SLC3SKm3SLh3SKV3SLT3SK33SLwMyKEMyLCMyKmMyLhMyKVMyLTMyK3MyLwuyKEuyLCuyKmuyLhuyKVuyLTuyK3uyLwdyKEdyLCdyKmdyLhdyKVdyLTdyK3dyLw/yKE/yLC/yKm/yLh/yKV/yLb/yJ/8BFHVzYjHsbCEAAAAASUVORK5CYII=" />
+    <title>দেশ নেতা ক্যালকুলেটর v2 - চাঁদা হিসাব করুন</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="দেশ নেতা ক্যালকুলেটর - আপনার মাসিক চাঁদা হিসাব করুন। বাংলাদেশের রাজনৈতিক চাঁদা ক্যালকুলেটর, সাতিরিক হিউমার সহ।" />
+    <meta name="keywords" content="দেশ নেতা, চাঁদা ক্যালকুলেটর, বাংলাদেশ, রাজনৈতিক, সাতিরিক, হিউমার, চুদাচুদি, চাঁদা হিসাব, রসিদ, বাংলা ক্যালকুলেটর" />
+    <meta name="author" content="বাংলাদেশি সাতিরিক" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="দেশ নেতা ক্যালকুলেটর v2 - চাঁদা হিসাব করুন" />
+    <meta property="og:description" content="দেশ নেতা ক্যালকুলেটর - আপনার মাসিক চাঁদা হিসাব করুন। বাংলাদেশের রাজনৈতিক চাঁদা ক্যালকুলেটর, সাতিরিক হিউমার সহ।" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="bn_BD" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="দেশ নেতা ক্যালকুলেটর v2 - চাঁদা হিসাব করুন" />
+    <meta name="twitter:description" content="দেশ নেতা ক্যালকুলেটর - আপনার মাসিক চাঁদা হিসাব করুন। বাংলাদেশের রাজনৈতিক চাঁদা ক্যালকুলেটর, সাতিরিক হিউমার সহ।" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="language" content="Bengali" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="mature" />
+    <meta name="theme-color" content="#111827" />
+    
+    <!-- Mobile Optimization -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="দেশ নেতা ক্যালকুলেটর" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Performance Optimization -->
+    <link rel="preload" as="script" href="https://cdn.tailwindcss.com" />
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" />
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" />
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" />
+    
+    <!-- Additional Social Media Tags -->
+    <meta property="og:site_name" content="দেশ নেতা ক্যালকুলেটর" />
+    <meta property="og:updated_time" content="2023-08-15T12:00:00+06:00" />
+    <meta name="twitter:creator" content="@BangladeshiSatirist" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- html2canvas for image generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Google Fonts for Bengali font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&family=Tiro+Bangla:ital,wght@0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Updated Chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <!-- Howler.js for sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <!-- Confetti.js for animation effects -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "দেশ নেতা ক্যালকুলেটর v2",
+      "description": "দেশ নেতা ক্যালকুলেটর - আপনার মাসিক চাঁদা হিসাব করুন। বাংলাদেশের রাজনৈতিক চাঁদা ক্যালকুলেটর, সাতিরিক হিউমার সহ।",
+      "applicationCategory": "Calculator",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BDT"
+      },
+      "inLanguage": "bn-BD",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Adults"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "বাংলাদেশি সাতিরিক"
+      }
+    }
+    </script>
+    <style>
+      /* Apply Bengali font to the body */
+      body {
+        font-family: "Kalpurush", sans-serif;
+        scroll-behavior: smooth;
+         position: relative;
+        overflow-x: hidden;
+      }
+      
+      /* Money emoji animation */
+      .money-emoji {
+        position: absolute;
+        z-index: 10;
+        pointer-events: none;
+        background-color: #111827; /* Dark Gray Background */
+        color: #e5e7eb;
+      }
+      .main-container {
+        background-color: #1f2937; /* Dark background */
+        border: 1px solid #374151;
+      }
+      .result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border-bottom: 1px solid #374151;
+        transition: background-color 0.3s;
+      }
+      .result-item:last-child {
+        border-bottom: none;
+      }
+      .result-item:hover {
+        background-color: #2d3748;
+      }
+      .infographic-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        text-align: center;
+      }
+      .meme-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 120px;
+      }
+      .meme-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+          0 10px 10px -5px rgba(0, 0, 0, 0.2);
+      }
+      /* Styles for the receipt to be generated as an image */
+      #receipt-container {
+        position: absolute;
+        left: -9999px; /* Hide it off-screen */
+        width: 1080px;
+        height: 1920px;
+        background: linear-gradient(to bottom, #000000, #1a1a2e);
+        color: white;
+        padding: 80px;
+        box-sizing: border-box;
+        font-family: "Tiro Bangla", serif; /* Special font for receipt */
+      }
+      /* Modal styles */
+      #receipt-modal {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Dark Mode Only */
+      
+
+      
+      /* Dark theme only - no toggle button */
+
+      /* Mobile responsive styles */
+      @media (max-width: 640px) {
+        .main-container {
+          margin: 0.5rem;
+          padding: 1rem;
+        }
+        .meme-card {
+          padding: 1rem;
+          min-height: 100px;
+        }
+        .infographic-card {
+          padding: 1rem;
+        }
+        #receipt-modal .bg-dark {
+          width: 95% !important;
+          margin: 1rem;
+        }
+        .result-item {
+          padding: 8px 12px;
+          font-size: 0.9rem;
+        }
+        .theme-toggle {
+          width: 40px;
+          height: 40px;
+          top: 10px;
+          right: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .meme-card {
+          padding: 0.75rem;
+          min-height: 80px;
+        }
+        .text-6xl {
+          font-size: 2.5rem !important;
+        }
+        .w-16.h-16 {
+          width: 3rem !important;
+          height: 3rem !important;
+        }
+        .w-20.h-20 {
+          width: 4rem !important;
+          height: 4rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="flex items-center justify-center min-h-screen py-4 px-2 sm:py-10 sm:px-4 transition-colors duration-300 dark-mode bg-gray-900"
+  >
+    <div
+      class="w-full max-w-4xl mx-auto main-container rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-8 pb-16 space-y-6 sm:space-y-8 text-gray-200 mb-12"
+    >
+      <!-- Warning Message -->
+      <div class="bg-red-900/50 border-2 border-red-700 rounded-lg p-4 mb-6 text-center">
+        <p class="text-red-300 font-bold text-sm sm:text-base">
+          সতর্কতা: এই সাইটটি অফিসিয়াল নয় এবং অশ্লীল ভাষা ব্যবহার করা হয়েছে। এটি <a href="https://deshneta10percent.vercel.app/" target="_blank" class="underline hover:text-red-400 transition-colors">https://deshneta10percent.vercel.app/</a> থেকে আইডিয়া নেওয়া হয়েছে। অনুগ্রহ করে আগে আসল সাইটটি দেখুন। ধন্যবাদ।
+        </p>
+      </div>
+      
+      <!-- Header Section -->
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-red-500">
+          দেশ নেতা ক্যালকুলেটর v2
+        </h1>
+        <p class="text-gray-400 mt-2 text-base sm:text-lg">
+          তোমার পকেটের মাল কেমনে উড়বে দেখো!
+        </p>
+      </div>
+
+      <!-- Input Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <div class="space-y-2">
+          <label
+            for="profession"
+            class="text-base sm:text-lg font-medium text-gray-300"
+            >তোর পেশা কি রে হারামজাদা?</label
+          >
+          <select
+            id="profession"
+            class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-800 border-2 border-gray-600 rounded-lg focus:outline-none focus:ring-4 focus:ring-red-500/50 transition duration-300 text-gray-200 text-sm sm:text-base"
+          >
+            <option value="default">--পেশা বাছাই কর--</option>
+            <option value="doctor">ডাক্তার</option>
+            <option value="engineer">ইঞ্জিনিয়ার</option>
+            <option value="teacher">শিক্ষক</option>
+            <option value="govt_job">সরকারী চাকুরীজীবী</option>
+            <option value="businessman">ব্যবসায়ী</option>
+            <option value="freelancer">ফ্রিল্যান্সার</option>
+            <option value="genz">Gen-Z (বিশেষ শাখা)</option>
+            <option value="retired_awami">অবসরপ্রাপ্ত আওয়ামী লীগার</option>
+            <option value="student">ছাত্র/ছাত্রী (নতুন শাখা)</option>
+            <option value="influencer">সোশ্যাল মিডিয়া ইনফ্লুয়েন্সার (নতুন)</option>
+            <option value="bessha">বেশ্যা (নতুন শাখা)</option>
+            <option value="driver">ড্রাইভার (নতুন শাখা)</option>
+
+            <option value="gangster">গ্যাংস্টার (নতুন শাখা)</option>
+            <option value="other">অন্যান্য</option>
+          </select>
+        </div>
+        <div class="space-y-2">
+          <label for="salary" class="text-lg font-medium text-gray-300"
+            >মাসে কত টাকা কামাস?</label
+          >
+          <input
+            type="number"
+            id="salary"
+            placeholder="এখানে সত্যি টাকা লেখ নাইলে তোর বাপের..."
+            class="w-full px-4 py-3 bg-gray-800 border-2 border-gray-600 rounded-lg focus:outline-none focus:ring-4 focus:ring-red-500/50 transition duration-300 text-gray-200"
+          />
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <div class="grid grid-cols-1 gap-4">
+        <button
+            onclick="calculateChada()"
+            class="w-full bg-red-600 text-white font-bold py-3 sm:py-4 px-4 rounded-lg hover:bg-red-700 active:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-500/50 transition duration-300 transform hover:scale-105 text-lg sm:text-xl border-2 border-red-400 shadow-lg shadow-red-900/50"
+          >
+            চাঁদা হিসাব কর শালা হারামজাদা!
+          </button>
+      </div>
+
+      <!-- Student Special Result Section -->
+      <div
+        id="student-result-container"
+        class="pt-4 hidden space-y-4 sm:space-y-6"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-red-500">
+          "ছাত্র/ছাত্রী" শাখার ফলাফল
+        </h2>
+        <div
+          class="meme-card col-span-1 md:col-span-2 mt-4 sm:mt-6"
+          style="background: linear-gradient(135deg, #4f46e5, #2563eb)"
+        >
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+            📚
+          </div>
+          <div class="text-2xl sm:text-3xl font-bold">
+            তোর বাবা-মায়ের টাকা দিবি!
+          </div>
+          <p class="mt-2 text-base sm:text-lg">
+            "তোর বাবা-মা কষ্ট করে পড়াশোনার টাকা দেয়, আর তুই সেটা দলকে দিবি! তোর বাবা-মা জানলে তোর পিটুনি খাবি!"
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #0369a1, #0c4a6e)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              🎓
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              পাশ করার সম্ভাবনা: 0%
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "দলের কাজে ব্যস্ত থাকবি, পড়াশোনা করার সময় পাবি না। ফেল করবি, বাবা-মা কান্দবে!"
+            </p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #7e22ce, #581c87)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              🔥
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              ক্যাম্পাসে তোর অবস্থান
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "তুই হবি দলের গুন্ডা, ক্লাসে যাবি না, শুধু চাঁদাবাজি করবি। তোর ভবিষ্যৎ অন্ধকার!"
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-center text-white">চাঁদা হিসাব ক্যালকুলেটর</h3>
+          <div class="mb-4">
+            <canvas id="studentChadaChart" class="w-full h-64"></canvas>
+          </div>
+          <div id="student-result-details" class="space-y-2 mt-4 bg-gray-700 rounded-lg p-4">
+            <!-- Results will be populated here -->
+          </div>
+        </div>
+        <div class="flex justify-center mt-4">
+          <button
+            onclick="generateReceipt()"
+            class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 text-lg border-2 border-blue-400 shadow-lg shadow-blue-900/50 animate-pulse"
+          >
+            স্টুডেন্ট স্পেশাল রসিদ জেনারেট কর!
+          </button>
+        </div>
+      </div>
+      
+      <!-- Bessha (Prostitute) Special Result Section -->
+      <div
+        id="bessha-result-container"
+        class="pt-4 hidden space-y-4 sm:space-y-6"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-red-500 animate-pulse">
+          "বেশ্যা" শাখার ফলাফল
+        </h2>
+        <div
+          class="meme-card col-span-1 md:col-span-2 mt-4 sm:mt-6"
+          style="background: linear-gradient(135deg, #dc2626, #991b1b)"
+        >
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+            💄
+          </div>
+          <div class="text-2xl sm:text-3xl font-bold">
+            তোর আয়ের ১০% দলকে দিবি!
+          </div>
+          <p class="mt-2 text-base sm:text-lg">
+            "নাহলে তোর ব্যবসা বন্ধ করে দিবো! তোর কাস্টমার সব কেড়ে নিবো! তোর ধান্দা বন্ধ করে দিবো!"
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #b91c1c, #7f1d1d)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              👮‍♂️
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              পুলিশ প্রটেকশন: ০%
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে পুলিশ দিয়ে ধরাবো! তোর ব্যবসা বন্ধ করে দিবো! তোর জীবন নরক করে দিবো!"
+            </p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #ef4444, #b91c1c)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              🏠
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              ব্যবসার জায়গা: বিপদে
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর ব্যবসার জায়গা দখল করে নিবো! তোর সব কাস্টমার কেড়ে নিবো! তুই রাস্তায় ভিক্ষা করবি!"
+            </p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #991b1b, #450a0a)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              💉
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              স্বাস্থ্য: বিপদে
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর স্বাস্থ্য নষ্ট করে দিবো! তোর কাস্টমার সব পালিয়ে যাবে! তোর ব্যবসা বন্ধ হয়ে যাবে!"
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-4">
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #b91c1c, #450a0a)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              👨‍👩‍👧‍👦
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              পরিবার: বিপদে
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর পরিবারকে হয়রানি করা হবে! তোর সব কিছু নষ্ট করে দিবো! তোর ব্যবসা বন্ধ করে দিবো!"
+            </p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #dc2626, #7f1d1d)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              💰
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              আয়: শূন্য
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর সব আয় বন্ধ করে দিবো! তোর ব্যবসা বন্ধ হয়ে যাবে! তুই ভিক্ষা করবি!"
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-center text-white">চাঁদা হিসাব ক্যালকুলেটর</h3>
+          <div class="mb-4">
+            <canvas id="besshaChadaChart" class="w-full h-64"></canvas>
+          </div>
+          <div id="bessha-result-details" class="space-y-2 mt-4 bg-gray-700 rounded-lg p-4">
+            <!-- Results will be populated here -->
+          </div>
+        </div>
+        <div class="flex justify-center mt-4">
+          <button
+            onclick="generateReceipt()"
+            class="bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105 text-lg border-2 border-red-400 shadow-lg shadow-red-900/50 animate-pulse"
+          >
+            বেশ্যা স্পেশাল রসিদ জেনারেট কর!
+          </button>
+        </div>
+      </div>
+      
+      <!-- Driver Special Result Section -->
+      <div
+        id="driver-result-container"
+        class="pt-4 hidden space-y-4 sm:space-y-6"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-red-500">
+          "ড্রাইভার" শাখার ফলাফল
+        </h2>
+        <div
+          class="meme-card col-span-1 md:col-span-2 mt-4 sm:mt-6"
+          style="background: linear-gradient(135deg, #1e40af, #1e3a8a)"
+        >
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+            🚗
+          </div>
+          <div class="text-2xl sm:text-3xl font-bold">
+            তোর গাড়ি দলের কাজে লাগবে!
+          </div>
+          <p class="mt-2 text-base sm:text-lg">
+            "তোর গাড়ি দিয়ে দলের নেতাদের ঘুরাতে হবে! নাহলে তোর লাইসেন্স বাতিল করে দিবো! তোর গাড়ি ভাঙ্গচুর করে দিবো!"
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #1e3a8a, #172554)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              🛣️
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              রাস্তায় অবস্থান: বিপদে
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর গাড়ি চালাতে দিবো না! পুলিশ দিয়ে হয়রানি করাবো! তোর গাড়ি জব্দ করে নিবো! তোর পরিবার ভিক্ষা করবে!"
+            </p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #2563eb, #1d4ed8)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              ⛽
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              ফুয়েল: শেষ
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর গাড়িতে পেট্রোল ভরতে দিবো না! তোর গাড়ি আগুনে পুড়িয়ে দিবো! তোর জীবন শেষ করে দিবো!"
+            </p>
+          </div>
+        </div>
+        <!-- Driver Calculator and Chart Section -->
+        <div class="mt-6 p-4 bg-blue-900 bg-opacity-50 rounded-lg shadow-lg">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/2 h-64">
+              <canvas id="driverChadaChart" class="w-full h-full"></canvas>
+            </div>
+            <div class="w-full md:w-1/2">
+              <h3 class="text-xl font-bold mb-3 text-blue-200">চাঁদার বিস্তারিত হিসাব</h3>
+              <div id="driver-result-details" class="space-y-2 text-blue-100"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-center mt-4">
+          <button
+            onclick="generateReceipt()"
+            class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 text-lg border-2 border-blue-400 shadow-lg shadow-blue-900/50 animate-pulse"
+          >
+            ড্রাইভার স্পেশাল রসিদ জেনারেট কর!
+          </button>
+        </div>
+      </div>
+      
+
+      
+      <!-- Gangster Special Result Section -->
+      <div
+        id="gangster-result-container"
+        class="pt-4 hidden space-y-4 sm:space-y-6"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-red-500">
+          "গ্যাংস্টার" শাখার ফলাফল
+        </h2>
+        <div
+          class="meme-card col-span-1 md:col-span-2 mt-4 sm:mt-6"
+          style="background: linear-gradient(135deg, #18181b, #09090b)"
+        >
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+            🔪
+          </div>
+          <div class="text-2xl sm:text-3xl font-bold">
+            তোর এলাকার চাঁদা দলকে দিবি!
+          </div>
+          <p class="mt-2 text-base sm:text-lg">
+            "তোর এলাকার চাঁদাবাজি, মাদক ব্যবসা, অস্ত্র ব্যবসার 10% দলকে দিবি! নাহলে তোর গ্যাং খতম করে দিবো! তোর লাশ গঙ্গায় ভাসবে!"
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #27272a, #18181b)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              🔫
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              টেরিটরি: শেষ
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর টেরিটরি দখল করে নিবো! তোর গ্যাং মেম্বারদের মেরে ফেলবো! তোর ব্যবসা বন্ধ করে দিবো!"
+            </p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #3f3f46, #27272a)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              ⚰️
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              জীবন: শেষ
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "চাঁদা না দিলে তোর জীবন শেষ করে দিবো! তোর পরিবারকে মেরে ফেলবো! তোর নাম-নিশানা মুছে ফেলবো!"
+            </p>
+          </div>
+        </div>
+        <!-- Gangster Calculator and Chart Section -->
+        <div class="mt-6 p-4 bg-zinc-800 rounded-lg shadow-lg">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/2 h-64">
+              <canvas id="gangsterChadaChart" class="w-full h-full"></canvas>
+            </div>
+            <div class="w-full md:w-1/2">
+              <h3 class="text-xl font-bold mb-3 text-zinc-300">চাঁদার বিস্তারিত হিসাব</h3>
+              <div id="gangster-result-details" class="space-y-2 text-zinc-200"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-4">
+          <button
+            onclick="generateReceipt()"
+            class="bg-zinc-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-zinc-700 transition duration-300 transform hover:scale-105 text-lg border-2 border-zinc-400 shadow-lg shadow-zinc-900/50 animate-pulse"
+          >
+            গ্যাংস্টার স্পেশাল রসিদ জেনারেট কর!
+          </button>
+        </div>
+      </div>
+      
+      <!-- Social Media Influencer Special Result Section -->
+      <div
+        id="influencer-result-container"
+        class="pt-4 hidden space-y-4 sm:space-y-6"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-red-500">
+          "সোশ্যাল মিডিয়া ইনফ্লুয়েন্সার" শাখার ফলাফল
+        </h2>
+        <div
+          class="meme-card col-span-1 md:col-span-2 mt-4 sm:mt-6"
+          style="background: linear-gradient(135deg, #ec4899, #be185d)"
+        >
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+            📱
+          </div>
+          <div class="text-2xl sm:text-3xl font-bold">
+            তোর ফলোয়ার্স বিক্রি করবি!
+          </div>
+          <p class="mt-2 text-base sm:text-lg">
+            "তোর ফলোয়ার্সদের মাথা নষ্ট করে দলের পক্ষে প্রপাগান্ডা ছড়াবি! নাহলে তোর একাউন্ট হ্যাক করে দিবো!"
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #db2777, #9d174d)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              👁️
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              ভিউ কাউন্ট: শূন্য
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "দলের পক্ষে কন্টেন্ট বানালে কেউ দেখবে না। তোর চ্যানেল ডেড হয়ে যাবে, ভিক্ষা করতে হবে!"
+            </p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #f43f5e, #be123c)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              💰
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">
+              স্পন্সরশিপ: বিদায়
+            </div>
+            <p class="mt-2 text-sm sm:text-base">
+              "তোর সব স্পন্সর পালিয়ে যাবে। ব্র্যান্ডরা তোর সাথে কাজ করবে না। তোর আয় বন্ধ হয়ে যাবে!"
+            </p>
+          </div>
+        </div>
+        <!-- Influencer Calculator and Chart Section -->
+        <div class="mt-6 p-4 bg-pink-900 bg-opacity-50 rounded-lg shadow-lg">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/2 h-64">
+              <canvas id="influencerChadaChart" class="w-full h-full"></canvas>
+            </div>
+            <div class="w-full md:w-1/2">
+              <h3 class="text-xl font-bold mb-3 text-pink-200">চাঁদার বিস্তারিত হিসাব</h3>
+              <div id="influencer-result-details" class="space-y-2 text-pink-100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-4">
+          <button
+            onclick="generateReceipt()"
+            class="bg-pink-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-pink-700 transition duration-300 transform hover:scale-105 text-lg border-2 border-pink-400 shadow-lg shadow-pink-900/50 animate-pulse"
+          >
+            ইনফ্লুয়েন্সার স্পেশাল রসিদ জেনারেট কর!
+          </button>
+        </div>
+      </div>
+      
+      <!-- Retired Awami League Infographic Result Section -->
+      <div
+        id="awami-result-container"
+        class="pt-4 hidden space-y-4 sm:space-y-6"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-red-500">
+          "অবসরপ্রাপ্ত" শাখার ফলাফল
+        </h2>
+        <div
+          class="meme-card col-span-1 md:col-span-2 mt-4 sm:mt-6"
+          style="background: linear-gradient(135deg, #7f1d1d, #450a0a)"
+        >
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+            🚪
+          </div>
+          <div class="text-2xl sm:text-3xl font-bold">
+            মাগির পোলা, ভাগ শালা!
+          </div>
+          <p class="mt-2 text-base sm:text-lg">
+            "আগে কি সুন্দর দিন কাটাইতাম, এখন কুত্তার মতো তাড়াইছে"
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6"
+        >
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #064e3b, #022c22)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              💰
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">অবদান: ১০%</div>
+            <p class="mt-2 text-sm sm:text-md">"দলের দুর্দিনে পাশে আছি, কিন্তু বেশি টাকা দিমু না!"</p>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #78350f, #451a03)"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 text-4xl sm:text-6xl">
+              🏦
+            </div>
+            <div class="text-xl sm:text-2xl font-bold">অবশিষ্ট: ৯০%</div>
+            <p class="mt-2 text-sm sm:text-md">"এইটা সুইস ব্যাংকে যাবে, নয়তো পুলিশ আমারে ধরবে"</p>
+          </div>
+        </div>
+        
+        <!-- Retired Calculator and Chart Section -->
+        <div class="mt-6 p-4 bg-red-900 bg-opacity-50 rounded-lg shadow-lg">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/2 h-64">
+              <canvas id="awamiChadaChart" class="w-full h-full"></canvas>
+            </div>
+            <div class="w-full md:w-1/2">
+              <h3 class="text-xl font-bold mb-3 text-red-200">চাঁদার বিস্তারিত হিসাব</h3>
+              <div id="awami-result-details" class="space-y-2 text-red-100"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-center mt-4">
+          <button
+            onclick="generateReceipt()"
+            class="bg-red-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-900 transition duration-300 transform hover:scale-105 text-lg border-2 border-red-700 shadow-lg shadow-red-900/50 animate-pulse"
+          >
+            অবসরপ্রাপ্ত স্পেশাল রসিদ জেনারেট কর!
+          </button>
+        </div>
+      </div>
+
+      <!-- Gen-Z Infographic Result Section -->
+      <div
+        id="genz-result-container"
+        class="pt-4 hidden space-y-4 sm:space-y-6"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-purple-400">
+          Gen-Z শাখার মিম গ্যালারি
+        </h2>
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6"
+        >
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #991b1b, #7f1d1d)"
+          >
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3 text-3xl sm:text-6xl"
+            >
+              🎯
+            </div>
+            <div class="text-lg sm:text-2xl font-bold">BNP CDI</div>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #9a3412, #7c2d12)"
+          >
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3 text-3xl sm:text-6xl"
+            >
+              🔥
+            </div>
+            <div class="text-lg sm:text-2xl font-bold">চুদলাম না যা ভাগ</div>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #166534, #14532d)"
+          >
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3 text-3xl sm:text-6xl"
+            >
+              👑
+            </div>
+            <div class="text-lg sm:text-2xl font-bold">TINKU ZIA</div>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #5b21b6, #4c1d95)"
+          >
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3 text-3xl sm:text-6xl"
+            >
+              💀
+            </div>
+            <div class="text-sm sm:text-lg font-bold">
+              এক দুই তিন চার,<br />ছাত্রদলের পুটকি মার।
+            </div>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #475569, #334155)"
+          >
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3 text-3xl sm:text-6xl"
+            >
+              🏠
+            </div>
+            <div class="text-sm sm:text-lg font-bold">
+              টিনের চালে কাউয়া,<br />তারেক জিয়া শাউয়া।
+            </div>
+          </div>
+          <div
+            class="meme-card"
+            style="background: linear-gradient(135deg, #0e7490, #155e75)"
+          >
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3 text-3xl sm:text-6xl"
+            >
+              📱
+            </div>
+            <div class="text-lg font-bold">
+              লন্ডন থেকে বার্তা,<br />দলের মাথায় বাঁড়া।
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gen-Z Calculator and Chart Section -->
+        <div class="mt-6 p-4 bg-purple-900 bg-opacity-50 rounded-lg shadow-lg">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/2 h-64">
+              <canvas id="genzChadaChart" class="w-full h-full"></canvas>
+            </div>
+            <div class="w-full md:w-1/2">
+              <h3 class="text-xl font-bold mb-3 text-purple-200">চাঁদার বিস্তারিত হিসাব</h3>
+              <div id="genz-result-details" class="space-y-2 text-purple-100"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-center mt-4">
+          <button
+            onclick="generateReceipt()"
+            class="bg-purple-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105 text-lg border-2 border-purple-400 shadow-lg shadow-purple-900/50 animate-pulse"
+          >
+            Gen-Z স্পেশাল রসিদ জেনারেট কর!
+          </button>
+        </div>
+      </div>
+
+      <!-- Regular Result Section -->
+      <div id="result-container" class="pt-4 hidden space-y-10">
+        <!-- Infographic Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div class="infographic-card bg-red-900/30 border-2 border-red-800/50">
+            <h3 class="text-xl font-bold text-red-400 mb-3">
+              তোর হাতে থাকবে
+            </h3>
+            <div id="survival-icon" class="w-20 h-20 mb-3 text-red-400"></div>
+
+            <p
+              id="remaining-salary"
+              class="font-bold text-2xl text-red-300"
+            ></p>
+            <p
+              id="survival-text"
+              class="text-md mt-2 font-semibold text-red-400"
+            ></p>
+          </div>
+          <div class="infographic-card bg-sky-900/30 border-2 border-sky-800/50">
+            <h3 class="text-xl font-bold text-sky-400 mb-3">
+              হাই কমান্ডের প্রতিক্রিয়া
+            </h3>
+            <div
+              id="leader-mood-icon"
+              class="w-20 h-20 mb-3 text-sky-400"
+            ></div>
+            <p
+              id="leader-mood-text"
+              class="text-lg font-semibold text-sky-300"
+            ></p>
+          </div>
+          <div class="infographic-card bg-green-900/30 border-2 border-green-800/50">
+            <h3 class="text-xl font-bold text-green-400 mb-3">
+              তোর টাকার ব্যবহার
+            </h3>
+            <div
+              id="contribution-icon"
+              class="w-20 h-20 mb-3 text-green-400"
+            ></div>
+            <p
+              id="contribution-text"
+              class="text-lg font-semibold text-green-300"
+            ></p>
+          </div>
+        </div>
+        <div
+          id="humor-text"
+          class="text-center text-lg sm:text-xl font-semibold text-blue-300 bg-blue-900/30 p-3 sm:p-4 rounded-lg border border-blue-800/50"
+        ></div>
+        <div>
+          <h3
+            class="text-xl sm:text-2xl font-bold text-center text-gray-300 mb-4"
+          >
+            তোর অবদানের গ্রাফচিত্র
+          </h3>
+          <div class="bg-gray-800/50 p-3 sm:p-4 rounded-lg">
+            <canvas id="chadaChart"></canvas>
+          </div>
+        </div>
+        <div>
+          <h3
+            class="text-xl sm:text-2xl font-bold text-center text-gray-300 mb-4"
+          >
+            বিস্তারিত হিসাব-নিকাশ
+          </h3>
+          <div
+            id="result-details"
+            class="text-base sm:text-lg bg-gray-800/50 p-3 sm:p-4 rounded-lg shadow-inner"
+          ></div>
+        </div>
+        <div class="text-center">
+          <button
+            id="print-button"
+            onclick="generateReceipt()"
+            class="bg-purple-600 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105 text-base sm:text-lg border-2 border-purple-400 shadow-lg shadow-purple-900/50"
+          >
+            তোর বিপ্লবী রসিদ ডাউনলোড কর শালা!
+          </button>
+        </div>
+      </div>
+
+      <!-- Error Message Section -->
+      <div
+        id="error-message"
+        class="text-center text-red-500 font-bold text-base sm:text-lg hidden"
+      ></div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="fixed bottom-0 left-0 right-0 py-4 bg-gray-900 text-center text-gray-400 text-sm">
+      <p>বাস্তবে যদি কেও চাদা চায় তাহলে তার স্যাটা ভায়ঙ্গা দিবি যাতে চাদা নিতে না পেরে | খানকির পোলারা চাদারের নাম জীবন নেওয়া চোদায়</p>
+    </div>
+
+    
+    <!-- Receipt Modal -->
+    <div
+      id="receipt-modal"
+      class="fixed inset-0 w-full h-full items-center justify-center hidden z-50"
+    >
+      <div
+        class="bg-gray-800 rounded-lg shadow-xl p-4 sm:p-6 w-11/12 sm:w-10/12 md:w-1/3 text-center relative max-h-screen overflow-y-auto"
+      >
+        <button
+          onclick="closeModal()"
+          class="absolute top-2 right-3 text-2xl font-bold text-gray-400"
+        >
+          &times;
+        </button>
+        <h2 class="text-2xl font-bold mb-4 text-gray-200">তোর  স্পেশাল রসিদ</h2>
+        <p class="text-gray-400 mb-4">
+          তোর আত্মত্যাগের প্রমাণপত্র নিচে দেওয়া হলো। এই রসিদ দিয়ে তুই প্রমাণ করবি যে তুই একটা চুদা খাওয়া গাধা। ছবিটা ডাউনলোড কর শালা।
+        </p>
+        <div
+          id="receipt-preview"
+          class="mb-4 border-2 border-dashed border-gray-600 p-2"
+        ></div>
+        <a
+          id="download-link"
+          href="#"
+          download="chuda_chudi_special_roshid.png"
+          class="w-full block bg-purple-600 text-white font-bold py-2 sm:py-3 px-4 rounded-lg hover:bg-purple-700 transition duration-300 text-sm sm:text-base border-2 border-red-500 shadow-lg shadow-red-500/50"
+          >তোর  স্পেশাল রসিদ ডাউনলোড কর শালা!</a
+        >
+      </div>
+    </div>
+
+    <!-- Hidden container for generating the receipt image -->
+    <div id="receipt-container" class="flex flex-col justify-between">
+      <div class="text-center">
+        <h1 id="receipt-title" class="text-6xl font-bold mt-20 text-red-500">
+          দেশ নেতা স্পেশাল রসিদ
+        </h1>
+        <h2 class="text-4xl mt-4 opacity-80">লন্ডন সংযোগ প্রকল্প</h2>
+        <div class="mt-6">
+          <p class="text-3xl text-red-500 font-bold">★ স্পেশাল রসিদ ★</p>
+        </div>
+      </div>
+      <div class="text-left text-5xl space-y-8 mt-20">
+        <p>
+          বিপ্লবীর নাম: <span id="receipt-profession" class="font-bold"></span>
+        </p>
+        <p>মাসিক চাঁদা: <span id="receipt-chada" class="font-bold"></span></p>
+        <p>
+          অবশিষ্ট (মাস চালানোর জন্য):
+          <span id="receipt-remaining" class="font-bold"></span>
+        </p>
+        <p>তারিখ: <span id="receipt-date" class="font-bold"></span></p>
+        <p id="receipt-status" class="text-red-500 font-bold">স্ট্যাটাস: চুদা খাওয়া গাধা</p>
+      </div>
+      <div class="text-center mt-20">
+        <p id="receipt-thanks" class="text-4xl italic opacity-90">
+          "তোর এই টাকা দল মনে রাখবে, যতক্ষণ না পর্যন্ত নতুন গাধা পাওয়া যায়।"
+        </p>
+        <div
+          class="mt-16 flex justify-between items-center border-t-4 border-dashed pt-8"
+        >
+          <p class="text-3xl">কর্তৃপক্ষের স্বাক্ষর</p>
+          <div class="border-4 border-dashed border-white p-4">
+            <p class="text-5xl font-bold">VERIFIED BY LONDON</p>
+            <p class="text-2xl text-red-400 mt-2">দেশ নেতা অনুমোদিত</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sound effects initialization
+      const sounds = {
+        calculate: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'],
+          volume: 0.7
+        }),
+        receipt: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/209/209-preview.mp3'],
+          volume: 0.8
+        }),
+        error: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/2053/2053-preview.mp3'],
+          volume: 0.7
+        }),
+        success: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3'],
+          volume: 0.7
+        }),
+        // New intimate sound effects
+        intimate1: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3'],
+          volume: 0.8
+        }),
+        intimate2: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3'],
+          volume: 0.8
+        }),
+        intimate3: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/1797/1797-preview.mp3'],
+          volume: 0.8
+        }),
+        // New sound effects
+        theme: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3'],
+          volume: 0.5
+        }),
+        donate: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/888/888-preview.mp3'],
+          volume: 0.7
+        }),
+        confetti: new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/1191/1191-preview.mp3'],
+          volume: 0.6
+        })
+      };
+      
+      // Dark theme only - no toggle function
+      document.addEventListener('DOMContentLoaded', function() {
+        // Force dark mode
+        document.body.classList.remove('light-mode');
+        localStorage.setItem('darkMode', true);
+        
+        // Update meta theme-color for dark mode
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute('content', '#111827');
+        }
+      });
+      
+      let chadaChartInstance = null;
+
+      const icons = {
+        survival: {
+          crying: `<div class="text-6xl">😭</div>`,
+          sad: `<div class="text-6xl">😔</div>`,
+          neutral: `<div class="text-6xl">😐</div>`,
+          happy: `<div class="text-6xl">😊</div>`,
+        },
+        leaderMood: {
+          angry: `<div class="text-6xl">😡</div>`,
+          thinking: `<div class="text-6xl">🤔</div>`,
+          happy: `<div class="text-6xl">😄</div>`,
+          strong: `<div class="text-6xl">💪</div>`,
+          trophy: `<div class="text-6xl">🏆</div>`,
+        },
+        contribution: {
+          tea: `<div class="text-6xl">☕</div>`,
+          rock: `<div class="text-6xl">🧱</div>`,
+          plane: `<div class="text-6xl">✈️</div>`,
+          building: `<div class="text-6xl">🏛️</div>`,
+        },
+      };
+
+      function formatCurrency(amount) {
+        return `৳ ${amount.toLocaleString("bn-BD", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`;  
+      }
+
+      function getLeadersMood(monthlyChada) {
+        if (monthlyChada < 2000)
+          return { icon: icons.leaderMood.angry, text: "চেয়ারম্যান রাগে ফাটতাছে! তোর বাপের বাপেরও বাপ! তোর নাম কালো তালিকায়!" };
+        if (monthlyChada < 10000)
+          return {
+            icon: icons.leaderMood.thinking,
+            text: "লন্ডন থেকে বার্তা আসছে... তোর কপালে কি আছে কে জানে। হয়তো রাতে ধরে নিয়ে যাবে!",
+          };
+        if (monthlyChada < 50000)
+          return { icon: icons.leaderMood.happy, text: "দেশনেত্রী খুশি! তোর ভাগ্য ভালো শালা! নাহলে তোর হাড্ডি গুড়া করে দিত!" };
+        if (monthlyChada < 100000)
+          return { icon: icons.leaderMood.strong, text: "জিয়ার সৈনিক সফল! তোর পুটকি বাঁচলো! নাহলে তোর লাশ গঙ্গায় ভাসত!" };
+        return { icon: icons.leaderMood.trophy, text: "সরাসরি নমিনেশন! তোর কপাল ফাটছে! এবার তুইও মিনিস্টার হয়ে লুটপাট করবি!" };
+      }
+
+      function getContributionUse(monthlyChada) {
+        if (monthlyChada < 2000)
+          return { icon: icons.contribution.tea, text: "নেতার এক কাপ চা আর বিড়ি, বাকি টাকা নেতার পকেটে" };
+        if (monthlyChada < 10000)
+          return {
+            icon: icons.contribution.rock,
+            text: "হরতালের জন্য ইট-পাটকেল, পেট্রোল বোমা আর ছাত্রদলের মদ-গাঁজার খরচ",
+          };
+        if (monthlyChada < 50000)
+          return { icon: icons.contribution.plane, text: "লন্ডনে নেতার চিকিৎসা, মদের বোতল আর বিলাতি রন্ডিবাজি" };
+        return {
+          icon: icons.contribution.building,
+          text: "নমিনেশনের ডাউন পেমেন্ট, নেতার বউয়ের শপিং আর গুলশানে নতুন ফ্ল্যাট কেনা",
+        };
+      }
+
+      function getHumorText(monthlyChada, profession) {
+        let baseText;
+        if (monthlyChada < 10000)
+          baseText = "তোর টাকায় কেনা পেট্রোল দিয়ে বাস-ট্রাক জ্বালাবে! তোর কপাল ভালো যে তোরে ধরে নাই! নাহলে তোর হাড্ডি গুড়া করে দিত!";
+        else if (monthlyChada < 50000)
+          baseText = "শাবাশ শালা! তোর অবদানে রাজপথে আবার মানুষের লাশ পড়বে। তোর টাকায় আরও কয়েকটা ক্রসফায়ার হবে!";
+        else
+          baseText =
+            "তুই তো দলের একজন বড় মাপের গাধা! নির্বাচন বয়কটের পরবর্তী খরচ তোর উপরেই ভরসা। তোর টাকায় আরও কয়েকটা গুম করা যাবে!";
+
+        switch (profession) {
+          case "doctor":
+            return (
+              "ডাক্তার শালা, দেশনেত্রীর চিকিৎসার জন্য তোর টাকা লাগবে! তোর হাসপাতালে যত মরীজ মরে, তার থেকে বেশি মানুষ মরবে রাস্তায়! " +
+              baseText
+            );
+          case "engineer":
+            return (
+              "ইঞ্জিনিয়ার শালা, নতুন বাংলাদেশ গড়তে তোর পকেটের মাল লাগবে! তোর ডিজাইন করা ব্রিজ ভেঙ্গে পড়ার আগেই তোর টাকা দিয়ে দেশ ভাঙ্গবো! " +
+              baseText
+            );
+          case "teacher":
+            return (
+              "শিক্ষক মানুষ, তোর দোয়াটাই বড় কথা। তবে দোয়ার সাথে 'টাকা' হলে গণতন্ত্র মুক্তি পাবে। তোর ছাত্রদের মাথা নষ্ট করার চেয়ে দলের জন্য টাকা দেওয়া ভালো! " +
+              baseText
+            );
+          case "govt_job":
+            return (
+              "সরকারী চাকুরীজীবী? ভয় পাস না, সরকার বদলালে তোরে বাঁচাইয়া রাখমু! নাহলে তোর চাকরি যাবে, পরিবার ভিক্ষা করবে! " +
+              baseText
+            );
+          case "businessman":
+            return (
+              "ব্যবসায়ী শালা, শহীদ জিয়ার আদর্শ বাস্তবায়নে তোর টাকা লাগবে! তোর দোকান-পাট ভাঙ্গচুর না করতে চাইলে আরও বেশি টাকা দে! " +
+              baseText
+            );
+          case "freelancer":
+            return (
+              "ফ্রিল্যান্সার শালা, লন্ডনে নেতার কাছে তোর ডলার খুব দরকার! তোর ল্যাপটপ ভাঙ্গার আগেই টাকা দিয়ে দে! " +
+              baseText
+            );
+          case "student":
+            return (
+              "ছাত্র/ছাত্রী শালা, তোর বাবা-মায়ের টাকা দলকে দিবি! তোর পড়াশোনার টাকা দিয়ে নেতারা বিদেশে ঘুরবে! তোর ভবিষ্যৎ নষ্ট হবে! " +
+              baseText
+            );
+          case "influencer":
+            return (
+              "ইনফ্লুয়েন্সার শালা, তোর ফলোয়ার্সদের মাথা নষ্ট করে দলের পক্ষে প্রপাগান্ডা ছড়াবি! তোর সোশ্যাল মিডিয়া একাউন্ট হ্যাক করে দিবো! " +
+              baseText
+            );
+          case "bessha":
+            return (
+              "মাগি শালী, তোর ভোদা বিক্রি করে যা কামাস তার ২০% দলকে দিবি! নাহলে তোর পুটকি ফাটিয়ে দিবো! তোর কাস্টমার সব কেড়ে নিবো! পুলিশ দিয়ে ধরিয়ে জেলে পাঠাবো! তোর ধান্দার জায়গা দখল করে নিবো! তোর মাকে-বোনকেও ধান্দায় নামাবো! " +
+              baseText
+            );
+          case "driver":
+            return (
+              "ড্রাইভার শালা, তোর গাড়ি দিয়ে দলের নেতাদের ঘুরাতে হবে! নাহলে তোর লাইসেন্স বাতিল করে দিবো! তোর গাড়ি ভাঙ্গচুর করে দিবো! তোর পরিবার ভিক্ষা করবে! " +
+              baseText
+            );
+          case "politician":
+            return (
+              "রাজনীতিবিদ শালা, তোর এলাকার সব টেন্ডার, ঠিকাদারি, চাঁদাবাজি দলকে দিবি! নাহলে তোর রাজনৈতিক ক্যারিয়ার শেষ করে দিবো! তোর নাম কালো তালিকায় ঢুকাবো! তোর ভোট চুরি করে নিবো! " +
+              baseText
+            );
+          case "police":
+            return (
+              "পুলিশ শালা, তোর বেতনের ৩০% দলকে দিবি! নাহলে তোর চাকরি চলে যাবে! তোর ট্রান্সফার করে দিবো! তোর প্রমোশন বন্ধ করে দিবো! তোর নাম ক্রসফায়ারে দিবো! " +
+              baseText
+            );
+          case "gangster":
+            return (
+              "গ্যাংস্টার শালা, তোর এলাকার চাঁদাবাজি, মাদক ব্যবসা, অস্ত্র ব্যবসার ৫০% দলকে দিবি! নাহলে তোর গ্যাং খতম করে দিবো! তোর লাশ গঙ্গায় ভাসবে! তোর টেরিটরি দখল করে নিবো! " +
+              baseText
+            );
+          default:
+            return baseText;
+        }
+      }
+
+      function getSurvivalAnalysis(remainingSalary) {
+        if (remainingSalary < 15000)
+          return {
+            icon: icons.survival.crying,
+            text: "এই টাকায় মাস চলবে? তোর পোলাপানরা ভিক্ষা করবে, তোর বউ ভাড়া যাবে! তোর বাপের সর্বনাশ হবে!",
+          };
+        if (remainingSalary < 25000)
+          return {
+            icon: icons.survival.sad,
+            text: "ডাল-ভাত খেয়ে গণতন্ত্র রক্ষা করতে হবে! তোর বউ রাগ করবে, পাড়ার মাতব্বরের সাথে ভাগ যাবে!",
+          };
+        if (remainingSalary < 50000)
+          return {
+            icon: icons.survival.neutral,
+            text: "তুই টিকে যাবি, দলের জন্যও কিছু করতে পারবি। তোর কপাল ভালো! তবে আরও দিলে তোর ভবিষ্যৎ আরও উজ্জ্বল হবে!",
+          };
+        return {
+          icon: icons.survival.happy,
+          text: "তুই তো বেশ ভালোই থাকবি! দলের জন্য আরও টাকা দে শালা! নাহলে তোর এই সুখ বেশিদিন থাকবে না!",
+        };
+      }
+
+      function calculateChada() {
+        const profession = document.getElementById("profession").value;
+        const salary = parseFloat(document.getElementById("salary").value);
+
+        const resultContainer = document.getElementById("result-container");
+        const genzResultContainer = document.getElementById(
+          "genz-result-container"
+        );
+        const awamiResultContainer = document.getElementById(
+          "awami-result-container"
+        );
+        const studentResultContainer = document.getElementById(
+          "student-result-container"
+        );
+        const influencerResultContainer = document.getElementById(
+          "influencer-result-container"
+        );
+        const besshaResultContainer = document.getElementById(
+          "bessha-result-container"
+        );
+        const driverResultContainer = document.getElementById(
+          "driver-result-container"
+        );
+
+        const gangsterResultContainer = document.getElementById(
+          "gangster-result-container"
+        );
+        const errorMessage = document.getElementById("error-message");
+
+        // Hide all result containers
+        resultContainer.classList.add("hidden");
+        genzResultContainer.classList.add("hidden");
+        awamiResultContainer.classList.add("hidden");
+        studentResultContainer.classList.add("hidden");
+        influencerResultContainer.classList.add("hidden");
+        besshaResultContainer.classList.add("hidden");
+        driverResultContainer.classList.add("hidden");
+
+        gangsterResultContainer.classList.add("hidden");
+        errorMessage.classList.add("hidden");
+
+        // Play calculate sound with a slight animation effect
+        if (profession !== "default" && !isNaN(salary) && salary > 0) {
+          sounds.calculate.play();
+          document.querySelector('.main-container').classList.add('animate-pulse');
+          
+          // Add money animation
+          addMoneyAnimation();
+          
+          setTimeout(() => {
+            document.querySelector('.main-container').classList.remove('animate-pulse');
+          }, 500);
+        }
+
+        // Handle special profession categories
+        if (profession === "genz") {
+          genzResultContainer.classList.remove("hidden");
+          genzResultContainer.scrollIntoView({ behavior: "smooth" });
+          updateGenzCalculator(salary);
+          return;
+        }
+
+        if (profession === "retired_awami") {
+          awamiResultContainer.classList.remove("hidden");
+          awamiResultContainer.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+        
+        if (profession === "student") {
+          studentResultContainer.classList.remove("hidden");
+          studentResultContainer.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+        
+        if (profession === "influencer") {
+          influencerResultContainer.classList.remove("hidden");
+          influencerResultContainer.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+        
+        if (profession === "bessha") {
+          besshaResultContainer.classList.remove("hidden");
+          besshaResultContainer.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+        
+        if (profession === "driver") {
+          driverResultContainer.classList.remove("hidden");
+          driverResultContainer.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+        
+
+        
+        if (profession === "gangster") {
+          gangsterResultContainer.classList.remove("hidden");
+          gangsterResultContainer.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+
+        if (isNaN(salary) || salary <= 0 || profession === "default") {
+          sounds.error.play();
+          errorMessage.innerText =
+            "শালা হারামজাদা, তোর পেশা এবং আয়ের পরিমাণ ঠিকঠাক দে! ফাঁকি দিস না! নাহলে তোর বাপের...";
+          errorMessage.classList.remove("hidden");
+          return;
+        }
+        
+        sounds.calculate.play();
+
+        const monthlyChada = salary * 0.1;
+        const remainingSalary = salary * 0.9;
+        const dailyChada = monthlyChada / 30;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+
+        document.getElementById("humor-text").innerText = getHumorText(
+          monthlyChada,
+          profession
+        );
+
+        const mood = getLeadersMood(monthlyChada);
+        document.getElementById("leader-mood-icon").innerHTML = mood.icon;
+        document.getElementById("leader-mood-text").innerText = mood.text;
+
+        const contribution = getContributionUse(monthlyChada);
+        document.getElementById("contribution-icon").innerHTML =
+          contribution.icon;
+        document.getElementById("contribution-text").innerText =
+          contribution.text;
+
+        const survival = getSurvivalAnalysis(remainingSalary);
+        document.getElementById("survival-icon").innerHTML = survival.icon;
+        document.getElementById("survival-text").innerText = survival.text;
+        document.getElementById("remaining-salary").innerText =
+          formatCurrency(remainingSalary);
+
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        const resultDetails = document.getElementById("result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${
+            item.isBold ? "font-bold text-blue-400" : ""
+          }`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+
+        if (chadaChartInstance) chadaChartInstance.destroy();
+
+        const chartCtx = document.getElementById("chadaChart").getContext("2d");
+        chadaChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ (টাকায়)",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(239, 68, 68, 0.7)",
+                  "rgba(220, 38, 38, 0.7)",
+                  "rgba(185, 28, 28, 0.7)",
+                  "rgba(153, 27, 27, 0.7)",
+                ],
+                borderColor: "#b91c1c",
+                borderWidth: 2,
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            scales: { 
+              y: { 
+                beginAtZero: true,
+                ticks: {
+                  color: '#e5e7eb'
+                },
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)'
+                }
+              },
+              x: {
+                ticks: {
+                  color: '#e5e7eb'
+                },
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)'
+                }
+              }
+            },
+            plugins: { 
+              legend: { 
+                display: false 
+              },
+              tooltip: {
+                backgroundColor: 'rgba(17, 24, 39, 0.8)',
+                titleColor: '#f87171',
+                bodyColor: '#f3f4f6',
+                borderColor: '#ef4444',
+                borderWidth: 1
+              }
+            },
+          },
+        });
+
+        resultContainer.classList.remove("hidden");
+        resultContainer.scrollIntoView({ behavior: "smooth" });
+      }
+
+      function generateReceipt() {
+        // Play receipt generation sound and a random intimate sound
+        sounds.receipt.play();
+        
+        // Play a random intimate sound effect
+        const intimateSounds = [sounds.intimate1, sounds.intimate2, sounds.intimate3];
+        const randomIntimateSound = intimateSounds[Math.floor(Math.random() * intimateSounds.length)];
+        setTimeout(() => {
+          randomIntimateSound.play();
+        }, 500);
+        
+        const professionSelect = document.getElementById("profession");
+        const selectedProfession =
+          professionSelect.options[professionSelect.selectedIndex].text;
+        const salary = parseFloat(document.getElementById("salary").value);
+        const monthlyChada = salary * 0.1;
+        const remainingSalary = salary * 0.9;
+        const today = new Date();
+        const dateString = today.toLocaleDateString("bn-BD", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        });
+
+        // Update receipt text with more explicit language related to intimate content
+        const receiptThanks = [
+          "তোর এই টাকা দল মনে রাখবে, যতক্ষণ না পর্যন্ত নতুন গাধা পাওয়া যায়।",
+          "তোর টাকায় নেতার বিলাসিতা চলবে, তুই ভিক্ষা করবি।",
+          "তোর অবদান দেশের ইতিহাসে লেখা থাকবে, যদি দেশ টিকে থাকে।",
+          "তোর টাকায় আরেকটা হরতাল হবে, আরও কয়েকটা লাশ পড়বে।",
+          "তোর টাকা দিয়ে নেতারা চুদাচুদি করবে, তুই হাত মারবি।",
+          "তোর টাকা দিয়ে নেতার বউ চুদা খাবে, তোর বউ ভাড়া যাবে।",
+          "তোর টাকা দিয়ে নেতারা মজা করবে, তুই চুদা খাবি।",
+          "তোর টাকা দিয়ে নেতারা লন্ডনে চুদাচুদি করবে, তুই এখানে ভিক্ষা করবি।"
+        ];
+        
+        // Set receipt status based on contribution amount
+        let receiptStatus = "";
+        if (monthlyChada < 5000) {
+          receiptStatus = "স্ট্যাটাস: ছোট চুদা খাওয়া গাধা";
+        } else if (monthlyChada < 20000) {
+          receiptStatus = "স্ট্যাটাস: মাঝারি চুদা খাওয়া গাধা";
+        } else if (monthlyChada < 50000) {
+          receiptStatus = "স্ট্যাটাস: বড় চুদা খাওয়া গাধা";
+        } else {
+          receiptStatus = "স্ট্যাটাস: প্রিমিয়াম চুদা খাওয়া গাধা";
+        }
+        
+        document.getElementById("receipt-profession").innerText =
+          selectedProfession;
+        document.getElementById("receipt-chada").innerText =
+          formatCurrency(monthlyChada);
+        document.getElementById("receipt-remaining").innerText =
+          formatCurrency(remainingSalary);
+        document.getElementById("receipt-date").innerText = dateString;
+        document.getElementById("receipt-status").innerText = receiptStatus;
+        document.getElementById("receipt-thanks").innerText = 
+          '"' + receiptThanks[Math.floor(Math.random() * receiptThanks.length)] + '"';
+
+        const receiptElement = document.getElementById("receipt-container");
+        const modal = document.getElementById("receipt-modal");
+        const previewContainer = document.getElementById("receipt-preview");
+        const downloadLink = document.getElementById("download-link");
+
+        previewContainer.innerHTML = "<p class='text-gray-300'>রসিদ তৈরি হচ্ছে...</p>";
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        html2canvas(receiptElement, {
+          scale: 1,
+          useCORS: true,
+          allowTaint: true,
+        }).then((canvas) => {
+          const imageUrl = canvas.toDataURL("image/png");
+          previewContainer.innerHTML = "";
+          const img = document.createElement("img");
+          img.src = imageUrl;
+          img.className = "max-w-full h-auto";
+          previewContainer.appendChild(img);
+          downloadLink.href = imageUrl;
+        });
+      }
+
+      function closeModal() {
+        // Play success sound and a random intimate sound
+        sounds.success.play();
+        
+        // Play a random intimate sound effect with a slight delay
+        const intimateSounds = [sounds.intimate1, sounds.intimate2, sounds.intimate3];
+        const randomIntimateSound = intimateSounds[Math.floor(Math.random() * intimateSounds.length)];
+        setTimeout(() => {
+          randomIntimateSound.play();
+        }, 300);
+        
+        document.getElementById("receipt-modal").classList.add("hidden");
+      }
+      
+
+      
+      // Money animation function
+      function addMoneyAnimation() {
+        const container = document.querySelector('.main-container');
+        const moneyEmojis = ['💰', '💸', '💵', '💴', '💶', '💷'];
+        const emojisCount = 15;
+        
+        for (let i = 0; i < emojisCount; i++) {
+          const emoji = document.createElement('div');
+          emoji.className = 'money-emoji absolute text-2xl sm:text-3xl';
+          emoji.style.left = `${Math.random() * 100}%`;
+          emoji.style.top = '-20px';
+          emoji.style.opacity = '0';
+          emoji.style.transform = 'translateY(0)';
+          emoji.style.transition = 'all 1.5s ease-out';
+          emoji.textContent = moneyEmojis[Math.floor(Math.random() * moneyEmojis.length)];
+          container.appendChild(emoji);
+          
+          // Animate after a small delay
+          setTimeout(() => {
+            emoji.style.opacity = '1';
+            emoji.style.transform = `translateY(${Math.random() * 300 + 100}px) rotate(${Math.random() * 360}deg)`;
+          }, Math.random() * 500);
+          
+          // Remove after animation completes
+          setTimeout(() => {
+            emoji.remove();
+          }, 2000);
+        }
+      }
+      
+      // Confetti animation
+      function triggerConfetti() {
+        sounds.confetti.play();
+        
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+        
+        // Fire a few more bursts for a more impressive effect
+        setTimeout(() => {
+          confetti({
+            particleCount: 80,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+          });
+        }, 250);
+        
+        setTimeout(() => {
+          confetti({
+            particleCount: 80,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+          });
+        }, 400);
+      }
+      
+      // Student calculator chart
+      let studentChartInstance = null;
+      
+      // Function to update student calculator
+      function updateStudentCalculator(salary) {
+        const monthlyChada = salary * 0.1; // 10% contribution
+        const dailyChada = monthlyChada / 30;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+        
+        // Update the chart
+        if (studentChartInstance) studentChartInstance.destroy();
+        
+        const chartCtx = document.getElementById("studentChadaChart").getContext("2d");
+        studentChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ (টাকায়)",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(59, 130, 246, 0.7)",
+                  "rgba(37, 99, 235, 0.7)",
+                  "rgba(29, 78, 216, 0.7)",
+                  "rgba(30, 64, 175, 0.7)",
+                ],
+                borderColor: "#1d4ed8",
+                borderWidth: 2,
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return formatCurrency(context.raw);
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return formatCurrency(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+        
+        // Update the result details
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        
+        const resultDetails = document.getElementById("student-result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${item.isBold ? "font-bold text-blue-400" : ""}`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+      }
+      
+      // Bessha calculator chart
+      let besshaChartInstance = null;
+      
+      // Function to update bessha calculator
+      function updateBesshaCalculator(salary) {
+        const monthlyChada = salary * 0.1; // 10% contribution
+        const dailyChada = monthlyChada / 30;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+        
+        // Update the chart
+        if (besshaChartInstance) besshaChartInstance.destroy();
+        
+        const chartCtx = document.getElementById("besshaChadaChart").getContext("2d");
+        besshaChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ (টাকায়)",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(220, 38, 38, 0.7)",
+                  "rgba(185, 28, 28, 0.7)",
+                  "rgba(153, 27, 27, 0.7)",
+                  "rgba(127, 29, 29, 0.7)",
+                ],
+                borderColor: "#b91c1c",
+                borderWidth: 2,
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return formatCurrency(context.raw);
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return formatCurrency(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+        
+        // Update the result details
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        
+        const resultDetails = document.getElementById("bessha-result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${item.isBold ? "font-bold text-red-400" : ""}`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+      }
+      
+      // Gangster calculator chart
+      let gangsterChartInstance = null;
+      
+      // Function to update gangster calculator
+      function updateGangsterCalculator(salary) {
+        const monthlyChada = salary * 0.5; // 50% contribution as mentioned in the gangster section
+        const dailyChada = monthlyChada / 30;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+        
+        // Update the chart
+        if (gangsterChartInstance) gangsterChartInstance.destroy();
+        
+        const chartCtx = document.getElementById("gangsterChadaChart").getContext("2d");
+        gangsterChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ (টাকায়)",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(82, 82, 91, 0.7)",
+                  "rgba(63, 63, 70, 0.7)",
+                  "rgba(39, 39, 42, 0.7)",
+                  "rgba(24, 24, 27, 0.7)",
+                ],
+                borderColor: "#52525b",
+                borderWidth: 2,
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return formatCurrency(context.raw);
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return formatCurrency(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+        
+        // Update the result details
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        
+        const resultDetails = document.getElementById("gangster-result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${item.isBold ? "font-bold text-zinc-300" : ""}`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+      }
+      
+      // Influencer calculator chart
+      let influencerChartInstance = null;
+      
+      // Function to update influencer calculator
+      function updateInfluencerCalculator(salary) {
+        const monthlyChada = salary * 0.1; // 10% contribution
+        const dailyChada = monthlyChada / 10;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+        
+        // Update the chart
+        if (influencerChartInstance) influencerChartInstance.destroy();
+        
+        const chartCtx = document.getElementById("influencerChadaChart").getContext("2d");
+        influencerChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ (টাকায়)",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(236, 72, 153, 0.7)",
+                  "rgba(219, 39, 119, 0.7)",
+                  "rgba(190, 24, 93, 0.7)",
+                  "rgba(157, 23, 77, 0.7)",
+                ],
+                borderColor: "#db2777",
+                borderWidth: 2,
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return formatCurrency(context.raw);
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return formatCurrency(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+        
+        // Update the result details
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        
+        const resultDetails = document.getElementById("influencer-result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${item.isBold ? "font-bold text-pink-200" : ""}`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+      }
+      
+      // Retired Awami calculator chart
+      let awamiChartInstance = null;
+      
+      // Function to update retired calculator
+      function updateAwamiCalculator(salary) {
+        const monthlyChada = salary * 0.1; // 10% contribution as mentioned in the retired section
+        const dailyChada = monthlyChada / 30;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+        
+        // Update the chart
+        if (awamiChartInstance) awamiChartInstance.destroy();
+        
+        const chartCtx = document.getElementById("awamiChadaChart").getContext("2d");
+        awamiChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ (টাকায়)",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(185, 28, 28, 0.7)",
+                  "rgba(153, 27, 27, 0.7)",
+                  "rgba(127, 29, 29, 0.7)",
+                  "rgba(69, 10, 10, 0.7)",
+                ],
+                borderColor: "#7f1d1d",
+                borderWidth: 2,
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return formatCurrency(context.raw);
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return formatCurrency(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+        
+        // Update the result details
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        
+        const resultDetails = document.getElementById("awami-result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${item.isBold ? "font-bold text-red-200" : ""}`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+      }
+      
+      // Driver calculator chart
+       let driverChartInstance = null;
+       
+       // Function to update driver calculator
+       function updateDriverCalculator(salary) {
+        const monthlyChada = salary * 0.12; // 12% contribution for drivers
+        const dailyChada = monthlyChada / 30;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+        
+        // Update the chart
+        if (driverChartInstance) driverChartInstance.destroy();
+        
+        const chartCtx = document.getElementById("driverChadaChart").getContext("2d");
+        driverChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(37, 99, 235, 0.7)",
+                  "rgba(29, 78, 216, 0.7)",
+                  "rgba(30, 64, 175, 0.7)",
+                  "rgba(30, 58, 138, 0.7)",
+                ],
+                borderColor: [
+                  "rgba(37, 99, 235, 1)",
+                  "rgba(29, 78, 216, 1)",
+                  "rgba(30, 64, 175, 1)",
+                  "rgba(30, 58, 138, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return formatCurrency(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+        
+        // Update the result details
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        
+        const resultDetails = document.getElementById("driver-result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${item.isBold ? "font-bold text-blue-200" : ""}`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+       }
+       
+       // Gen-Z calculator chart
+       let genzChartInstance = null;
+       
+       // Function to update Gen-Z calculator
+       function updateGenzCalculator(salary) {
+        const monthlyChada = salary * 0.15; // 15% contribution for Gen-Z
+        const dailyChada = monthlyChada / 30;
+        const weeklyChada = dailyChada * 7;
+        const yearlyChada = monthlyChada * 12;
+        
+        // Update the chart
+        if (genzChartInstance) genzChartInstance.destroy();
+        
+        const chartCtx = document.getElementById("genzChadaChart").getContext("2d");
+        genzChartInstance = new Chart(chartCtx, {
+          type: "bar",
+          data: {
+            labels: ["দৈনিক", "সাপ্তাহিক", "মাসিক", "বাৎসরিক"],
+            datasets: [
+              {
+                label: "চাঁদার পরিমাণ",
+                data: [dailyChada, weeklyChada, monthlyChada, yearlyChada],
+                backgroundColor: [
+                  "rgba(139, 92, 246, 0.7)",
+                  "rgba(124, 58, 237, 0.7)",
+                  "rgba(109, 40, 217, 0.7)",
+                  "rgba(91, 33, 182, 0.7)",
+                ],
+                borderColor: [
+                  "rgba(139, 92, 246, 1)",
+                  "rgba(124, 58, 237, 1)",
+                  "rgba(109, 40, 217, 1)",
+                  "rgba(91, 33, 182, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return formatCurrency(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+        
+        // Update the result details
+        const results = [
+          { label: "দৈনিক", value: formatCurrency(dailyChada) },
+          { label: "সাপ্তাহিক", value: formatCurrency(weeklyChada) },
+          { label: "মাসিক", value: formatCurrency(monthlyChada) },
+          { label: "বাৎসরিক", value: formatCurrency(yearlyChada) },
+        ];
+        
+        const resultDetails = document.getElementById("genz-result-details");
+        resultDetails.innerHTML = "";
+        results.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = `result-item ${item.isBold ? "font-bold text-purple-200" : ""}`;
+          itemDiv.innerHTML = `<span>${item.label}:</span><span>${item.value}</span>`;
+          resultDetails.appendChild(itemDiv);
+        });
+      }
+      
+      // Modify the calculateChada function to update the calculators
+      const originalCalculateChada = calculateChada;
+      calculateChada = function() {
+        const profession = document.getElementById("profession").value;
+        const salary = parseFloat(document.getElementById("salary").value);
+        
+        // Call the original function
+        originalCalculateChada();
+        
+        // Update the appropriate calculator based on profession
+        if (!isNaN(salary) && salary > 0) {
+          if (profession === "student") {
+            updateStudentCalculator(salary);
+          } else if (profession === "bessha") {
+            updateBesshaCalculator(salary);
+          } else if (profession === "gangster") {
+            updateGangsterCalculator(salary);
+          } else if (profession === "influencer") {
+            updateInfluencerCalculator(salary);
+          } else if (profession === "awami") {
+            updateAwamiCalculator(salary);
+          } else if (profession === "genz") {
+            updateGenzCalculator(salary);
+          } else if (profession === "driver") {
+            updateDriverCalculator(salary);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
